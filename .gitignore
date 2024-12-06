@@ -38,7 +38,7 @@ Thumbs.db
 
 .ipynb_checkpoints
 
-docker-compose.yml
+docker-compose.yaml
 Dockerfile
 
 celerybeat-schedule
