@@ -1,10 +1,7 @@
-from django.shortcuts import render
-from django.contrib.auth.models import User
 from rest_framework import generics
-from .serializers import UserSerializer, LoginSerializer, RideSerializer, RideListSerializer
+from .serializers import UserSerializer, RideSerializer, RideListSerializer
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.generics import ListAPIView
-from rest_framework.viewsets import ModelViewSet
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -14,7 +11,6 @@ from rest_framework import status
 from django.contrib.auth import get_user_model
 from asgiref.sync import async_to_sync
 from channels.layers import get_channel_layer
-from rest_framework.authentication import TokenAuthentication
 from django.db.models import Q
 
 class CreateUserView(generics.CreateAPIView):
