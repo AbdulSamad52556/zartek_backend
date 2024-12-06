@@ -48,12 +48,8 @@ class LoginView(APIView):
             print('issue')
             print(e)
             print('issue')
-            return Response({
-                "refresh": 'asdfasdf',
-                "access": 'asdfasdf',
-                "role": 'asdfasdf',
-                "username": 'asdfasdf'
-            })
+            return Response({"error": "User not found"},
+                status=status.HTTP_400_BAD_REQUEST)
         
 class ActiveDriverListView(ListAPIView):
     permission_classes = [IsAuthenticated]
